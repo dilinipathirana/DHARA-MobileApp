@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="cards-bg">
+
+  <ion-card tappable (click)="goToClimate()">
+
+    <img src="assets/img/option/option1.png"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        Today's Weather
+      </ion-card-title>
+      <p>
+        Get the latest weather updates.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card tappable (click)="goToWaterlevel()">
+
+    <div>
+      <img src="assets/img/option/option2.png"/>
+    </div>
+
+    <ion-card-content>
+      <ion-card-title>
+        River Water Level
+      </ion-card-title>
+      <p>
+      View current river water level.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+     
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card tappable (click)="goToSaferoute()">
+
+    <div>
+      <img src="assets/img/option/option3.png"/>
+    </div>
+
+    <ion-card-content>
+      <ion-card-title>
+        Safest Routes
+      </ion-card-title>
+      <p>
+        Know the most safest route to reach your location.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+     
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card tappable (click)="goToPastflood()">
+
+    <div>
+      <img src="assets/img/option/option4.png"/>
+    </div>
+
+    <ion-card-content>
+      <ion-card-title>
+        Past Floods
+      </ion-card-title>
+      <p>
+        Check the flood events happened earlier.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+     
+    </ion-row>
+
+  </ion-card>
+
+
+
+</ion-content>
+

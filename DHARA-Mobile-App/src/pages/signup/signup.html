@@ -1,0 +1,45 @@
+<ion-content class="background">
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+       <div class="logo"></div>
+       <h2 ion-text class="text-primary">
+         <strong>Welcome to DHARA!</strong>
+       </h2>
+     </div>
+   <ion-card>
+     
+     <ion-card-content>
+       <form>
+       <ion-list no-line>
+         <ion-item id="round1">
+           <ion-input type="text"   placeholder="First Name"></ion-input>
+         </ion-item>
+         <ion-item id="round1">
+            <ion-input type="text"   placeholder="Last Name"></ion-input>
+          </ion-item>
+          <ion-item id="round1">
+              <ion-input type="text"   placeholder="Email"></ion-input>
+            </ion-item>
+         <ion-item id="round2">
+             <ion-input type="text"  placeholder="Password" ></ion-input>  
+           </ion-item>
+           <ion-item id="round1">
+              <ion-input type="text"   placeholder="Confirm Password"></ion-input>
+            </ion-item>
+            <ion-item id="round1">
+                <ion-input type="text"   placeholder="Contact Number"></ion-input>
+              </ion-item>
+       </ion-list>   
+       </form>
+        <div class="spacer" style="width:300px;height:36px;" id="login-spacer2"></div>
+       <button id="login-button1" ion-button color="positive" block style="border-radius:24px 24px 24px 24px;" on-click="showAlert()">
+         Sign Up &nbsp;
+         <ion-icon name="log-in"></ion-icon>
+       </button>
+              
+       <button id="login-button2" ion-button clear color="positive" block style="border-radius:24px 24px 24px 24px;" on-click="goToLogin()">
+          <p> Already have an account</p>
+       </button>
+     </ion-card-content>
+   </ion-card>
+ </ion-content>
