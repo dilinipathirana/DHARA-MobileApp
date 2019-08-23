@@ -1,2 +1,0 @@
-# Dhaara
-Flood Assistant App
