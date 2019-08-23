@@ -1,4 +1,10 @@
 <ion-app>
+    <div *ngIf="showSplash" class="splash">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+      </div>
     <ion-menu contentId="content1" side="start">
         <ion-header>
           <ion-toolbar>
@@ -7,12 +13,14 @@
         </ion-header>
         <ion-content>
             <ion-list>
-                <ion-item>Home</ion-item>
-                <ion-item>Weather</ion-item>
-                <ion-item>Water Level</ion-item>
-                <ion-item>Past Flood Map</ion-item>
+                <ion-item routerLink="/home">Home</ion-item>
+                <ion-item routerLink="/weather">Weather</ion-item>
+                <ion-item routerLink="/water-level">Water Level</ion-item>
+                <ion-item routerLink="/past-flood">Past Flood Map</ion-item>
               </ion-list>
         </ion-content>
       </ion-menu>
+    <ion-nav [root]="HomePage" #content swipeBackEnabled="false"></ion-nav>
+
       <ion-router-outlet id="content1" main></ion-router-outlet>
 </ion-app>

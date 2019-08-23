@@ -1,6 +1,8 @@
 {
   "name": "dhara",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "78a8e75e"
 }
