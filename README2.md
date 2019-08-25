@@ -1,1 +1,1 @@
-Added weather forecasting and current weather details
+Added weather forecasting and current weather details.
