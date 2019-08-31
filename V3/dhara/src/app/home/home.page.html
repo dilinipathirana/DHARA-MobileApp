@@ -3,27 +3,35 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-    <ion-searchbar autocomplete="on" placeholder="Find Location"></ion-searchbar>
+    <ion-searchbar placeholder="Find Location" [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div id="mapId" style="width: 100%; height: 100%">
-    </div>
 
+    <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+
+    <div id="map" style="width: 100%; height: 100%">
+    </div>
+    
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button>
           <ion-icon name="arrow-dropup"></ion-icon>
         </ion-fab-button>
         <ion-fab-list side="top">
           <!-- Refresh current status -->
-            <ion-fab-button color="light">
+            <ion-fab-button color="light" (click)="refreshmap()">
               <ion-icon name="sync"></ion-icon>
             </ion-fab-button>
              <!-- current location -->
-             <ion-fab-button color="light">
+             <ion-fab-button color="light" (click)="getCurrentLocation()">
                 <ion-icon name="locate"></ion-icon>
             </ion-fab-button>
+        
              <!-- nearest evacuation location -->
              <ion-fab-button color="light">
                 <ion-icon name="pin"></ion-icon>
@@ -32,8 +40,9 @@
             <ion-fab-button color="light">
                 <ion-icon name="navigate"></ion-icon>
             </ion-fab-button>
-           
+            <ion-fab-button color="light" (click)="openActionSheet()">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
       </ion-fab>
-    
-</ion-content>
+     

@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase : {
+    apiKey: "AIzaSyBou2UF0OAmIjoZ2bq96tIwrPzT9qF4pXY",
+    authDomain: "dhara-project.firebaseapp.com",
+    databaseURL: "https://dhara-project.firebaseio.com",
+    projectId: "dhara-project",
+    storageBucket: "dhara-project.appspot.com",
+    messagingSenderId: "987839442488",
+    appId: "1:987839442488:web:a14761bc99ca72cb"
+  }
 };
 
 /*
