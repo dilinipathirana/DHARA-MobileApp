@@ -1,12 +1,50 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-title>Weather</ion-title>
-</ion-toolbar>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Current Weather</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-25 offset-25>
+          <h2 class= "desc">Colombo, Sri Lanka</h2>
+          
+          <div class="icon" >
+              
+                          
+              <img *ngIf=" weather.WeatherIcon < '10'" src="https://developer.accuweather.com/sites/default/files/0{{weather.WeatherIcon}}-s.png" style="width:80px;height:70px;">
+              <img *ngIf=" weather.WeatherIcon > '09'" src="https://developer.accuweather.com/sites/default/files/{{weather.WeatherIcon}}-s.png" style="width:80px;height:70px;">
+            <!-- <? else ?> -->
+              <!-- <img src="https://developer.accuweather.com/sites/default/files/{{weather.WeatherIcon}}-s.png" style="width:80px;height:70px;"> -->
+              
+          </div>
+          <h3 class= "desc">{{weather.WeatherText}}</h3>
+      </ion-col>
+    </ion-row>
+        <ion-col width-100>
+          <ion-item color="primary">
+            <strong>Temperature : </strong>{{weather.ApparentTemperature.Metric.Value}}&deg;C
+          </ion-item>
+
+          <ion-item color="primary">
+              <strong>Relative Humidity : </strong>{{weather.RelativeHumidity}}%
+            </ion-item>
+
+            <ion-item color="primary">
+                <strong>Wind Speed : </strong>{{weather.Wind.Speed.Metric.Value}} km/h
+              </ion-item>
+
+              <ion-item color="primary">
+                  <strong>Dew Point : </strong>{{weather.DewPoint.Metric.Value}}&deg;C
+                </ion-item>
+        </ion-col>
+
+    
+  </ion-grid>
 
 </ion-content>

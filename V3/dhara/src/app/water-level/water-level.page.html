@@ -1,12 +1,47 @@
 <ion-header>
     <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-title>Water Level</ion-title>
-</ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Water Level Forecast</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-card>
+          
+      <img src="assets/img/water.png"/>
+      <ion-card-title>
+       <h3 class="text-align">Location : Wellampitya </h3>
+     </ion-card-title>
+   <ion-card-content>
+    
+   </ion-card-content>
+   
+   <ion-item *ngIf="data">
+     <ion-icon name='stats' item-start style="color: #6515f8"></ion-icon>
+     Now
+     <ion-badge slot="end">{{data.items[0].value}} m</ion-badge>
+   </ion-item>
+   
+   <ion-item *ngIf="waterLevel">
+     <ion-icon name='time' item-start style="color: #55acee"></ion-icon>
+     After 4 Hours
+     <ion-badge slot="end">{{waterLevel.hour4}} m</ion-badge>
+     <!-- <ion-badge slot="end">2.015 m</ion-badge> -->
+      </ion-item>
+  
+      <div *ngIf="waterLevel">
+          <ion-button   *ngIf=" waterLevel.hour4 < '2'" shape="round"expand="block" color="danger" id="alert-button1"  on-click="presentAlert()">
+              Check Alerts &nbsp;
+            </ion-button>
+          <ion-button  *ngIf=" waterLevel.hour4 > '2'" shape="round"expand="block" color="danger" id="alert-button1"  on-click="DangerAlert()">  
+              Check Alerts &nbsp;
+          </ion-button>
+           
+      </div>
+   
+  </ion-card>
+  
+  </ion-content>
+  

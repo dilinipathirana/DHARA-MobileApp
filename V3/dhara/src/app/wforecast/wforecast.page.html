@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Next 5 Days</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid *ngIf="forecast">
+      <ion-row>
+          <ion-col width-100>
+              <ion-item color="primary">
+                <strong>{{forecast[0].Date}}  </strong>
+                <img *ngIf=" forecast[0].Day.Icon < '10'" src="https://developer.accuweather.com/sites/default/files/0{{forecast[0].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                 <img *ngIf=" forecast[0].Day.Icon > '09'" src="https://developer.accuweather.com/sites/default/files/{{forecast[0].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                   
+                <!-- <img src="https://developer.accuweather.com/sites/default/files/{{forecast[0].Day.Icon}}-s.png" style="width:80px;height:70px;"> -->
+              </ion-item>
+
+              <ion-item color="primary">
+                  <strong>{{forecast[1].Date}}  </strong>
+                  <img *ngIf=" forecast[1].Day.Icon < '10'" src="https://developer.accuweather.com/sites/default/files/0{{forecast[1].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                   <img *ngIf=" forecast[1].Day.Icon > '09'" src="https://developer.accuweather.com/sites/default/files/{{forecast[1].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                   
+                  <!-- <img src="https://developer.accuweather.com/sites/default/files/{{forecast[1].Day.Icon}}-s.png" style="width:80px;height:70px;"> -->
+                </ion-item>
+
+                <ion-item color="primary">
+                    <strong>{{forecast[2].Date}}  </strong>
+                    <img *ngIf=" forecast[2].Day.Icon < '10'" src="https://developer.accuweather.com/sites/default/files/0{{forecast[2].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                    <img *ngIf=" forecast[2].Day.Icon > '09'" src="https://developer.accuweather.com/sites/default/files/{{forecast[2].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                   
+                    <!-- <img src="https://developer.accuweather.com/sites/default/files/{{forecast[2].Day.Icon}}-s.png" style="width:80px;height:70px;"> -->
+                  </ion-item>
+
+                  <ion-item color="primary">
+                      <strong>{{forecast[3].Date}}  </strong>
+                      <img *ngIf=" forecast[3].Day.Icon < '10'" src="https://developer.accuweather.com/sites/default/files/0{{forecast[3].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                      <img *ngIf=" forecast[3].Day.Icon > '9'" src="https://developer.accuweather.com/sites/default/files/{{forecast[3].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                    
+                    </ion-item>
+
+                    <ion-item color="primary">
+                        <strong>{{forecast[4].Date}}  </strong>
+                        <img *ngIf=" forecast[4].Day.Icon < '10'" src="https://developer.accuweather.com/sites/default/files/0{{forecast[4].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                        <img *ngIf=" forecast[4].Day.Icon > '9'" src="https://developer.accuweather.com/sites/default/files/{{forecast[4].Day.Icon}}-s.png" style="width:80px;height:70px;">
+                   
+                        <!-- <img src="https://developer.accuweather.com/sites/default/files/{{forecast[4].Day.Icon}}-s.png" style="width:80px;height:70px;"> -->
+                      </ion-item>
+                 
+            </ion-col>
+    
+      </ion-row>
+</ion-grid>
+</ion-content>

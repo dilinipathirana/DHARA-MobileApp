@@ -3,13 +3,31 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-    <ion-searchbar placeholder="Find Location" [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" ></ion-searchbar>
+    <ion-searchbar  placeholder="Find Location" [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" >
+    </ion-searchbar>
+    <ion-searchbar placeholder="Find Destination" [(ngModel)]="autocomplete.inputDestination" (ionInput)="updateSearchResults()" >
+    </ion-searchbar>
+    <ion-button shape="round" vertical="bottom" horizontal="end" slot="end" (click)="findsafestroute()" >
+        <ion-icon name="navigate"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  
     <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="searchSource(item)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+
+      <ion-list [hidden]="autocompleteItems.length == 0">
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="searchDestination(item)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+      <ion-list [hidden]="autocompleteItems.length == 0">
         <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
           {{ item.description }}
         </ion-item>
@@ -33,16 +51,17 @@
             </ion-fab-button>
         
              <!-- nearest evacuation location -->
-             <ion-fab-button color="light">
+             <ion-fab-button color="light" (click)=getNearestEvacuationCenter()>
                 <ion-icon name="pin"></ion-icon>
             </ion-fab-button>
             <!-- Safest path -->
-            <ion-fab-button color="light">
-                <ion-icon name="navigate"></ion-icon>
+            <ion-fab-button color="light" (click)="presentPopover()">
+                <ion-icon name="search"></ion-icon>
             </ion-fab-button>
-            <ion-fab-button color="light" (click)="openActionSheet()">
+            <ion-fab-button color="light" (click)="openActionSheet($event)">
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
           </ion-fab-list>
       </ion-fab>
      
+</ion-content>
